@@ -75,11 +75,12 @@
         <textarea id="message" placeholder="Escreva sua mensagem aqui..." rows="5" onkeypress="return getKeyPress(event)" maxlength="500"></textarea>
         <button type="submit" id="btnSend" class="confirm" onclick="sendMessage()">Enviar</button>
 
-        <div id="charCounter"></div>
+        <div id="charCounter">0/500</div>
 
     </div>
 
     <script>
+        
         function sendMessage() {
             // pega o valor digitado
             var message = document.getElementById("message").value;
