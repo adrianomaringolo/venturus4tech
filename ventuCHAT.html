@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Venturus4Tech - VentuCHAT</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        textarea {
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+            width: 500px;
+            padding: 10px;
+            font-family: sans-serif;
+            font-size: 17px;
+        }
+
+        .confirm {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            border: none;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 17px;
+            transition: background-color 0.5s;
+        }
+
+        .confirm:hover {
+            background-color: navy;
+            cursor: pointer;
+        }
+
+        .messageList {
+            width: 570px;
+            height: 700px;
+            background-color: lightgray;
+            padding: 10px;
+            margin-bottom: 15px;
+            overflow: auto;
+        }
+
+        .messageList ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .messageList ul li {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+
+            white-space: pre-wrap;
+        }
+
+        .messageList li .time {
+            text-align: right;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-window">
+        <div class="messageList">
+            <ul id="messageList">
+
+            </ul>
+        </div>
+        <textarea id="message" placeholder="Escreva sua mensagem aqui..." rows="5" onkeypress="return getKeyPress(event)"></textarea>
+        <button type="submit" id="btnSend" class="confirm" onclick="sendMessage()">Enviar</button>
+
+    </div>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            var time = new Date().toLocaleTimeString();
+            document.getElementById("messageList").innerHTML += "<li>" + message + "<div class='time'>" + time +
+                "</div></li>";
+        }
+
+        function getKeyPress(e) {
+            if (e.code == "Enter" && !e.shiftKey) {
+                sendMessage();
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>
