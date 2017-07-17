@@ -89,10 +89,12 @@
             document.getElementById("messageList").innerHTML += "<li>" + message + "<div class='time'>" + time + "</div></li>";
 
             // apaga o conteúdo da textarea
-            document.getElementById("message").value('');
+            document.getElementById("message").value = '';
 
             // coloca o foco na textarea
             document.getElementById("message").focus();
+
+            getCharCounter();
         }
 
         function getKeyPress(e) {
