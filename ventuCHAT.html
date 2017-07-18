@@ -84,6 +84,8 @@
         function sendMessage() {
             // pega o valor digitado
             var message = document.getElementById("message").value;
+
+            if(message == '') { return; } // se a mensagem for vazia, retorna e não faz nada
             var time = formatTime(new Date()); // isso serve para criar um objeto com a data e hora atuais
 
             // adiciona um novo item na lista de mensagens
