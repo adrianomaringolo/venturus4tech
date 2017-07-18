@@ -1,0 +1,20 @@
+<div class="chat-window">
+  <div class="messageList">
+    <ul id="messageList">
+      <li *ngFor="let messageItem of messageList">
+        {{ messageItem.message }}
+        <span class="time">{{messageItem.time | date:"hh:mm a" }}</span>
+      </li>
+    </ul>
+  </div>
+  <textarea id="message" placeholder="Escreva sua mensagem aqui..." 
+    rows="5" (keypress)="getKeyPress($event)" 
+    maxlength="500" [(ngModel)]="message"></textarea>
+  <button type="submit" id="btnSend" 
+    class="confirm" (click)="sendMessage()">Enviar</button>
+
+  <div id="charCounter">0/500</div>
+
+  
+
+</div>
