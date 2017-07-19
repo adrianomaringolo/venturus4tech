@@ -17,13 +17,14 @@ export class ChatComponent {
       message: this.message,
       time: new Date()
     });
+    this.message = '';
   }
 
   getKeyPress(e) {
     // se digitou apenas Enter, manda a mensagem, se apertou Shift também, não faz nada diferente, ou seja, apenas pula a linha
     if (e.code == "Enter" && !e.shiftKey) {
       this.sendMessage();
+      e.preventDefault();
     }
   }
-
 }
