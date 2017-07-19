@@ -7,3 +7,15 @@
 .chat-header img {
   width: 40%;
 }
+
+.username {
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.time {
+  float: right;
+  font-size: 11px;
+  color: gray;
+}

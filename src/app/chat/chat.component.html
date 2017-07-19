@@ -1,18 +1,12 @@
 <div class="messageList">
-  <ul id="messageList">
-    <li *ngFor="let message of messageList">
-      <div class="message">
-        <div class="username">{{message.name}}</div>
-        <div class="text">{{ message.message }}</div>
-        <div class='time'>{{ message.time | date:"hh:mm a" }}</div>
-      </div>
-    </li>
-  </ul>
+	<ul id="messageList">
+		<app-chat-item *ngFor="let message of messageList" text="{{message.message}}" time="{{message.time}}"></app-chat-item>
+	</ul>
 </div>
 
-<textarea #myText id="message" placeholder="Escreva sua mensagem aqui..." rows="3" (keypress)="getKeyPress($event)" [(ngModel)]="message" maxlength="500"></textarea>
-<span class="counter">{{message.length}}/500</span>
+<textarea id="message" placeholder="Escreva sua mensagem aqui..." rows="3" 
+	(keypress)="getKeyPress($event)" [(ngModel)]="message"></textarea>
 
 <div class="btn-area">
-  <button type="submit" id="btnSend" class="confirm" (click)="sendMessage()">Enviar</button>
+	<button type="submit" id="btnSend" class="confirm" (click)="sendMessage()">Enviar</button>
 </div>

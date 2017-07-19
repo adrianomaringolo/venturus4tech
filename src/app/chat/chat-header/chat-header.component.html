@@ -1,4 +1,6 @@
-<div class="chat-header"> {{param}}
+<div class="chat-header">
   <img src="../assets/logo.png">
-  <span class="username">{{getUsername()}}</span>
+  <div class="username">{{ username }}
+    <div class='time'>{{ logTime | date:"hh:mm a" }}</div>
+  </div>
 </div>

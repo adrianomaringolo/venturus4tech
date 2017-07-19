@@ -44,43 +44,7 @@ textarea {
   padding: 0;
 }
 
-.messageList ul li .message {
-  font-family: sans-serif;
-  background-color: white;
-  padding: 10px;
-  margin-bottom: 5px;
-  
-  width: 70%;
-  display: inline-block;
-}
-
-.messageList .text {
-  white-space: pre-wrap;
-}
-
-.messageList ul li .profile {
-  padding: 10px;
-  margin-bottom: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.messageList li .time {
-  text-align: right;
-  font-size: 12px;
-  border-top: 1px solid #eee;
-  padding-top: 5px;
-  margin-top: 5px;
-}
-
 .btn-area {
   padding-top: 10px;
   text-align: right;
-}
-
-.counter {
-  margin-top: 10px;
-  font-size: 11px;
-  float: left;
 }

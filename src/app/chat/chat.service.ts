@@ -4,10 +4,14 @@ import { Injectable } from '@angular/core';
 export class ChatService {
 
   name: string = '';
+  logTime: Date;
 
   constructor() { 
+
     while(this.name == '')
-      this.name = prompt('Qual é o seu nome?');
+      this.name = prompt("What is your name?");
+
+    this.logTime = new Date();
   }
 
 }

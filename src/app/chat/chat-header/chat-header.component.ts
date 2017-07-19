@@ -1,5 +1,5 @@
-import { ChatService } from '../chat.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ChatService } from "app/chat/chat.service";
 
 @Component({
   selector: 'app-chat-header',
@@ -8,12 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChatHeaderComponent {
 
-  constructor(private service: ChatService) {
-    
-  }
+  username: string = '';
+  logTime: Date;
 
-  getUsername(): string {
-    return this.service.name;
+  constructor(private chatService: ChatService) {
+    this.username = chatService.name;
+    this.logTime = chatService.logTime;
   }
-
 }
