@@ -1,3 +1,4 @@
+import { ChatService } from './chat.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,12 +11,14 @@ export class ChatComponent {
   message: string = '';
   messageList: Object[] = [];
 
-  constructor() { }
+  constructor(private chatService: ChatService) {
+  }
 
   public sendMessage(): void {
     this.messageList.push({ 
       message: this.message,
-      time: new Date()
+      time: new Date(),
+      name: this.chatService.name
     });
     this.message = '';
   }

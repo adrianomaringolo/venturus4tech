@@ -49,9 +49,13 @@ textarea {
   background-color: white;
   padding: 10px;
   margin-bottom: 5px;
-  white-space: pre-wrap;
+  
   width: 70%;
   display: inline-block;
+}
+
+.messageList .text {
+  white-space: pre-wrap;
 }
 
 .messageList ul li .profile {

@@ -1,7 +1,11 @@
 <div class="messageList">
   <ul id="messageList">
     <li *ngFor="let message of messageList">
-      <div class="message">{{ message.message }}<div class='time'>{{ message.time | date:"hh:mm a" }}</div></div>
+      <div class="message">
+        <div class="username">{{message.name}}</div>
+        <div class="text">{{ message.message }}</div>
+        <div class='time'>{{ message.time | date:"hh:mm a" }}</div>
+      </div>
     </li>
   </ul>
 </div>

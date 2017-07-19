@@ -5,18 +5,21 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
+import { ChatService } from "app/chat/chat.service";
+import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    ChatHeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ ChatService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

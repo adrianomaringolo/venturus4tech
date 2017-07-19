@@ -1,0 +1,9 @@
+.chat-header {
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.chat-header img {
+  width: 40%;
+}
