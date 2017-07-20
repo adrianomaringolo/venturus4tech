@@ -1,31 +1,35 @@
 import { ChatService } from '../chat.service';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-chat-item',
   templateUrl: './chat-item.component.html',
   styleUrls: ['./chat-item.component.css']
 })
-export class ChatItemComponent {
+export class ChatItemComponent implements OnInit {
 
   @Input() text: string = '';
   @Input() time: string = '';
+  @Input() author: string = '';
   letter = '';
-  name = '';
 
-  backgroundColor: SafeStyle;
-  color: SafeStyle;
+  backgroundColor: string;
+  color: string;
 
-  constructor(private sanitizer: DomSanitizer, private chatService: ChatService) {
-    this.letter =  chatService.name.substr(0, 1);
-    this.name = chatService.name;
-    this.backgroundColor = this.sanitizer.bypassSecurityTrustStyle(this.stringToColor(chatService.name));
+  constructor(private chatService: ChatService) {}
 
-    if (this.getColorBrightness(chatService.name) == 0)
-      this.color = this.sanitizer.bypassSecurityTrustStyle('#000000');
+  isMyMessage(): boolean {
+    return this.author == this.chatService.name;
+  }
+
+  ngOnInit() {
+    this.letter = this.author.substr(0, 1);
+    this.backgroundColor = this.stringToColor(this.author);
+
+    if (this.getColorBrightness(this.author) == 0)
+      this.color = '#000000';
     else
-      this.color = this.sanitizer.bypassSecurityTrustStyle('#ffffff');
+      this.color = '#ffffff';
   }
 
   private stringToColor(str): string {

@@ -1,6 +1,6 @@
-<div class="messageList">
-	<ul id="messageList">
-		<app-chat-item *ngFor="let message of messageList" text="{{message.message}}" time="{{message.time}}"></app-chat-item>
+<div class="messageList" #scrollMe>
+	<ul id="messageList" >
+		<app-chat-item *ngFor="let message of messageList" text="{{message.message}}" time="{{message.time}}" author="{{message.author}}"></app-chat-item>
 	</ul>
 </div>
 
