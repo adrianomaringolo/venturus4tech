@@ -7,3 +7,20 @@
   margin-bottom: 30px;
   width: 650px;
 }
+
+a {
+  float: left;
+  background: navy;
+  padding: 15px;
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+
+a:hover, a.active {
+  background-color: white;
+  color: black;
+}

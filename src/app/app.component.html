@@ -1,4 +1,6 @@
+<a [routerLink]="['/chat']" routerLinkActive="active">CHAT</a>
+<a [routerLink]="['/sobre']" routerLinkActive="active">SOBRE</a>
 <div class="chat-window">
   <app-chat-header></app-chat-header>
-  <app-chat></app-chat>
+  <router-outlet></router-outlet>
 </div>

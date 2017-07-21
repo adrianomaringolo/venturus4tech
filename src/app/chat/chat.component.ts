@@ -27,9 +27,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       time: new Date(),
       author: this.chatMessage.name
     }
-
-
-
+    
     this.chatMessage.sendMessage(obj)
       .subscribe((response) => {
         this.messageList.push(response.json());
