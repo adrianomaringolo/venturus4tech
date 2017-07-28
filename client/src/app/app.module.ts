@@ -8,23 +8,18 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatItemComponent } from './chat/chat-item/chat-item.component';
 import { ChatHeaderComponent } from './chat/chat-header/chat-header.component';
-import { AboutComponent } from './about/about.component';
-
-import { routing } from "app/app.routes"; 
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
     ChatItemComponent,
-    ChatHeaderComponent,
-    AboutComponent
+    ChatHeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    routing // << importação da var de routes
+    HttpModule
   ],
   providers: [ChatService],
   bootstrap: [AppComponent]

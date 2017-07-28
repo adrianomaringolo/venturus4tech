@@ -15,23 +15,16 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
   constructor(private chatMessage: ChatService) {
-    this.chatMessage.getMessages().subscribe(
-      (list) => this.messageList = list,
-      (error) => console.error(error)
-    );
+    
   }
 
   public sendMessage(): void {
     var obj = {
       message: this.message,
-      time: new Date(),
       author: this.chatMessage.name
     }
-    
-    this.chatMessage.sendMessage(obj)
-      .subscribe((response) => {
-        this.messageList.push(response.json());
-      });
+
+    this.chatMessage.server.emit('messages',obj)
 
     this.message = '';
   }
@@ -47,6 +40,9 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.scrollToBottom();
+    this.chatMessage.server.on('messages', message => {
+      this.messageList.push(message);
+    })
   }
 
   ngAfterViewChecked() {

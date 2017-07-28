@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from "@angular/http";
+import * as io from 'socket.io-client';
 
 import 'rxjs/Rx';
 
@@ -8,7 +9,8 @@ import 'rxjs/Rx';
 export class ChatService {
 
   private _headers: Headers;
-  private _url: string = ''
+  private _url: string = '';
+  server = null;
 
   name: string = '';
   logTime: Date;
@@ -17,6 +19,8 @@ export class ChatService {
 
     while(this.name == '')
       this.name = prompt("What is your name?");
+
+    this.server = io('http://localhost:3000');  
 
     this.logTime = new Date();
 
